@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
+
+  <!-- MDB -->
+  <script type="text/javascript" defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css" />
+  <title>Login Page</title>
+</head>
+
+<body>
+  <div class="bmi_section_wrapper">
+    <section class="bmi_section">
+      <div class="calculator_wrapper">
+        <h2>BMI Calculator</h2>
+        <form action="">
+          <div class="form_row">
+            <p class="detail_label">Height</p>
+            <div class="form-outline">
+              <input type="text" id="heightinfeet" class="form-control form-control-lg required" />
+              <label class="form-label" for="heightinfeet">Height in Feet</label>
+            </div>
+            <div class="form-outline">
+              <input type="text" id="heightininches" class="form-control form-control-lg" />
+              <label class="form-label" for="heightininches">Height in Inches</label>
+            </div>
+            <div class="form-outline">
+              <input type="text" id="heightincm" class="form-control form-control-lg" />
+              <label class="form-label" for="heightininches">Height in CM</label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <p class="detail_label">Weight</p>
+            <div class="form-outline">
+              <input type="text" id="weightinstone" class="form-control form-control-lg" />
+              <label class="form-label" for="weightinstone">Weight in Stone</label>
+            </div>
+            <div class="form-outline">
+              <input type="text" id="weightinpounds" class="form-control form-control-lg" />
+              <label class="form-label" for="weightinpounds">Weight in pounds</label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <p class="detail_label">Age</p>
+            <div class="form-outline">
+              <input type="text" id="" class="form-control form-control-lg" />
+              <label class="form-label" for="age">Age</label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <p class="detail_label">Sex</p>
+            <!-- Default checked radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" checked />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Male
+              </label>
+            </div>
+            <!-- Default radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Female
+              </label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <p class="detail_label">Ethnic Group</p>
+            <!-- Default checked radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="egroup" id="nepal" checked value="nepali" />
+              <label class="form-check-label" for="nepal">
+                Nepali
+              </label>
+            </div>
+            <!-- Default radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="egroup" id="india" value="indian" />
+              <label class="form-check-label" for="india">
+                Indian
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="egroup" id="china" value="chinese" />
+              <label class="form-check-label" for="china">
+                Chinese
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="egroup" id="mixed" value="mixed" />
+              <label class="form-check-label" for="mixed">
+                Mixed
+              </label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <p class="detail_label">Activity Level</p>
+            <!-- Default checked radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="activity" id="active" checked />
+              <label class="form-check-label" for="activity">
+                Active
+              </label>
+            </div>
+            <!-- Default radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="activity" id="inactive" />
+              <label class="form-check-label" for="activity">
+                Inactive
+              </label>
+            </div>
+            <hr />
+          </div>
+          <div class="form_row">
+            <div class="buttons">
+              <button type="submit" class="form_button" onclick="calculateBMI()">Calculate</button>
+              <button type="reset" class="form_button">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="result_box block">
+        <div class="result_wrapper block">
+          <h3>Underweight</h3>
+          <p>Being underweight could be a sign you're not eating enough or you may be ill. If you're underweight, a GP
+            can
+            help.</p>
+        </div>
+        <div class="result_wrapper none">
+          <h3>Healthy Weight</h3>
+          <p>Keep up the good work! For tips on maintaining a healthy weight, check out the food and diet and fitness
+            sections.</p>
+        </div>
+        <div class="result_wrapper none">
+          <h3>Overweight</h3>
+          <p>The best way to lose weight if you're overweight is through a combination of diet and exercise.
+            <br>
+            The BMI calculator will give you a personal calorie allowance to help you achieve a healthy weight safely.
+          </p>
+        </div>
+        <div class="result_wrapper none">
+          <h3>Obese</h3>
+          <p>The best way to lose weight if you're obese is through a combination of diet and exercise, and, in some
+            cases,
+            medicines. See a GP for help and advice.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="./app.js">
+
+  </script>
+</body>
+
+</html>
